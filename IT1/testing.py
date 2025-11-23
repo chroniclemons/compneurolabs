@@ -3,24 +3,24 @@ from DG import *
 import numpy as np
 import sys
 
-np.set_printoptions(threshold=sys.maxsize)
+np.random.seed(42)
 
 
 # SIMPLE HOPFIELD NETWORK
 def basic_process():
     X = np.array([one,three,six]);
-    W = base_weights(X);print(X.shape)
+    W = base_weights(X)
     
     # Test pattern 1 error corrects to 3
     print("test1")
-    # seven_segment(test1)
+    seven_segment(test1)
     converge_energy(test1,W,printend=True,printenergy=True)
-    
+    print('________')
     # Test pattern 2 error corrects to 6
     print("test2")
     seven_segment(test2)
     converge_energy(test2,W,printend=True,printenergy=True)
-    
+    print('________')
     # see what incomplete 4 corrects to 
     print("test3")
     seven_segment(test3)
@@ -63,6 +63,6 @@ def DGattempt():
     DG.classify(out3,printval=True,printit=True)
 
 if __name__ =='__main__':
-    basic_process()
+    # basic_process()
     print('----------------------------------------------')
     DGattempt()

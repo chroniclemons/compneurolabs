@@ -1,6 +1,7 @@
 import numpy as np
-nm = lambda x :np.linalg.norm(x)
 from basic_hopfield import seven_segment
+inb = lambda x: (x + 1)/2
+nm = lambda x :np.linalg.norm(x)
 
 class Dentate_Gyrus():
     def __init__(self,pats):
@@ -39,7 +40,7 @@ class Dentate_Gyrus():
     def classify(self,vec,printval=False,printit = False):
         ls = np.zeros(len(self.pairs))
         for i in range(len(ls)):
-            val = self.pairs[i][1]
+            val = inb(self.pairs[i][1]);vec = inb(vec)
             ls[i] = np.dot(vec , val)/(nm(vec)*nm(val)+ 1e-9)
         if printval==True:print(ls)
         if printit ==True: seven_segment(self.pairs[np.argmax(ls)][0])

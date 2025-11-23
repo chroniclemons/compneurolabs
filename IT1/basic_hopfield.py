@@ -42,7 +42,7 @@ hexdigits = np.int8([\
     [1,1,0,1,1,0,0, 1,1,1,1]])*2-1
 
 zero, one, two, three, four, five, six, seven, eight, nine, hexA, hexB, hexC, hexD, hexE, hexF = hexdigits
-all_pats = np.array([zero, one, two, three, four, five, six, seven, eight, nine, hexA, hexB, hexC, hexD, hexE, hexF]);
+all_pats = np.array([zero,one, two, three, four, five, six, seven, eight, nine, hexA, hexB, hexC, hexD, hexE, hexF]);
 
 test1 = np.int8([1,-1,1,1,-1,1,1,-1,-1,-1,-1])
 test2 = np.int8([1,1,1,1,1,1,1,-1,-1,-1,-1])
